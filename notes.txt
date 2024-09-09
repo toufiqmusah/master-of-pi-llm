@@ -1,0 +1,36 @@
+# To initialise and use ollama in python..
+
+!pip install ollama
+
+import ollama
+
+model = 'qwen2:0.5b-instruct'
+
+input_prompt = input("Enter your prompt: ")
+
+response_stream = ollama.chat(model = model, 
+							  messages = [
+								{
+									'role':'user',
+									'content':input_prompt,
+								
+								}],
+								stream = True,
+								)
+# This may not output as expected
+for chunk in stream:
+	output = f"{chunk['message']['content'], end = '', flush = True}"
+	
+
+# To get embeddings
+ollama.embeddings(model=model, prompt='The sky is blue because of rayleigh scattering')
+
+
+# Streamlit!
+
+# Streamlit has several chat elements, apparently.
+# Mainly using st.chat_message(), st.chat_input()
+
+# st.chat_message -> For inserting message containers in to the app. Can be text, charts etc
+# st.chat_input -> For diplaying the chat input widget so a user can type a message.
+
