@@ -34,3 +34,75 @@ ollama.embeddings(model=model, prompt='The sky is blue because of rayleigh scatt
 # st.chat_message -> For inserting message containers in to the app. Can be text, charts etc
 # st.chat_input -> For diplaying the chat input widget so a user can type a message.
 
+%----------------------- 0000 ----------------------%
+
+Title: Personal AI Chatbot Assistant on a Raspberry Pi
+
+Introduction:
+Artificial intelligence (AI) assistants like ChatGPT, Gemini and Alexa have become commonplace, but they typically rely on cloud-based systems, raising privacy concerns and requiring constant internet access. A personal AI assistant deployed locally on a Raspberry Pi offers a privacy-conscious, offline alternative. This project focuses on deploying a large language model (LLM) on a Raspberry Pi to create a cost-effective, customizable AI assistant that runs without the need for external servers.
+
+The Raspberry Pi’s portability and affordability make it an ideal platform for this project, despite its limited resources compared to cloud servers. By selecting optimized LLMs for the Pi, this project enables users to interact with an AI assistant that enhances productivity while safeguarding data privacy and offering offline capabilities.
+
+Requirements:
+To build a personal AI assistant on a Raspberry Pi, a few hardware and software components are necessary.
+
+Raspberry Pi: A Raspberry Pi 4 or higher is recommended for sufficient processing power and memory.
+
+Ollama: A platform for running downloading and running LLMs.
+
+Streamlit: An app framework used to build interactive web applications. Streamlit will serve as the interface for the AI assistant.
+
+Steps To Follow in Creating our AI Assistant:
+
+Step 1: Install Ollama
+To start, you’ll need to install Ollama, a platform for running large language models locally on your Raspberry Pi. Use the following command to download and install Ollama via the command line interface (CLI):
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+Step 2: Choose and Download a Model
+Once Ollama is installed, the next step is selecting a suitable language model from the Ollama repository based on your use case. For this project, I am using the qwen2:0.5b-instruct model, which offers an optimized size and good performance for deployment on a Raspberry Pi.
+
+To download and run this model, use the following command:
+
+ollama run qwen2:0.5b-instruct
+
+Ollama offers several other models that may be suitable for the Raspberry Pi, such as:
+
+gemma2:2b
+deepseek-coder
+tinyllama:1.1b
+qwen2-math:1.5b
+
+For example, if you're interested in building a personal math tutor, you might consider the qwen2-math:1.5b model. After running the above command, the model will be downloaded and available locally for your project.
+
+Step 3: Build a Front-End with Streamlit
+The next step is to create a front-end for the AI assistant using Streamlit, an easy-to-use framework for building web-based interfaces with Python. To begin, lets first set up a Python virtual environment:
+
+python -m venv myenv
+Activate the virtual environment:
+
+source myenv/bin/activate
+
+Install Streamlit and Ollama within your virtual environment:
+
+pip install streamlit
+pip install ollama
+
+Step 4: Create Your Python Application
+Now, we are ready to build the Python app that will serve as the interface for the AI assistant.
+
+Create a new directory/folder for the project and navigate to it.
+
+In the directory, create a Python file, for example, app.py:
+
+Open the app.py file in your preferred text editor or IDE. This file will contain the code needed to access and run your local large language model (LLM) as shown below.
+
+The code is well commented for understanding.
+
+'''
+code
+'''
+
+Deploying a personal AI assistant on a Raspberry Pi offers several practical use cases. It can serve as a productivity enhancer, and offer a privacy-focused solution as all data is processed locally, ensuring sensitive information remains secure and private.
+
+Another key application is as an offline educational tool (with qwen2-math:1.5b - try it out), especially useful in areas with limited internet access. The assistant can provide tutoring, support learning in subjects like math and languages, and assist in educational projects. Overall, the portability, privacy, and offline functionality of the assistant make it versatile and impactful across various fields.
